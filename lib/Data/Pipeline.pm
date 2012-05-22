@@ -1,5 +1,7 @@
 package Data::Pipeline;
 
+our $VERSION = '0.02';
+
 use Sub::Exporter;
 use Sub::Name 'subname';
 use Class::MOP ();
@@ -8,8 +10,6 @@ use Carp ();
 use Data::Pipeline::Iterator;
 
 use MooseX::Types::Moose qw(HashRef);
-
-our $VERSION = '0.01';
 
 sub import {
     my($class, @methods) = @_;

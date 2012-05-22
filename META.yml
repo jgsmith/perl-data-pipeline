@@ -1,20 +1,28 @@
---- 
-abstract: manage linear pipelines of data filters
-author: James Smith
-build_requires: 
+---
+abstract: 'manage aggregated data filters'
+author:
+  - 'James Smith, C<< <jsmith@cpan.org> >>'
+build_requires:
+  ExtUtils::MakeMaker: 6.36
   Test::More: 0
+configure_requires:
+  ExtUtils::MakeMaker: 6.36
 distribution_type: module
-generated_by: Module::Install version 0.67
+dynamic_config: 1
+generated_by: 'Module::Install version 1.06'
 license: perl
-meta-spec: 
-  url: http://module-build.sourceforge.net/META-spec-v1.3.html
-  version: 1.3
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
 name: Data-Pipeline
-no_index: 
-  directory: 
+no_index:
+  directory:
+    - examples
     - inc
     - t
-requires: 
-  Moose: 0.43
-tests: t/*.t
-version: 0.01
+    - xt
+requires:
+  Moose: 2.06
+resources:
+  license: http://dev.perl.org/licenses/
+version: 0.02

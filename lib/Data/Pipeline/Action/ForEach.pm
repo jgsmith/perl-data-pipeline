@@ -3,6 +3,8 @@ package Data::Pipeline::Action::ForEach;
 use Moose;
 with 'Data::Pipeline::Action';
 
+use namespace::autoclean;
+
 use MooseX::Types::Moose qw( CodeRef );
 use Data::Pipeline::Types qw( Iterator );
 

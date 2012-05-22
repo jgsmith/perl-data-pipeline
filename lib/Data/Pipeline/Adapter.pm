@@ -84,14 +84,15 @@ sub duplicate {
     # if those are required, we can't duplicate
     
     
-    my $attrs;
+    my @attrs;
     
-    $attrs = $self -> can_duplicate or
+    @attrs = $self -> can_duplicate or
         Carp::croak "Unable to duplicate adapter (".($self -> meta -> name).")";
     
     my %defaults;
+    my $meta = $self -> meta;
     $defaults{$_} = $self -> $_
-        foreach grep { !/^_/ && $attrs->{$_}->has_value($self) } (keys %$attrs);
+        foreach grep { !/^_/ && $meta->get_attribute($_)->has_value($self) } (@attrs);
 
     delete $defaults{source};
        
@@ -101,10 +102,10 @@ sub duplicate {
 sub can_duplicate {
     my($self) = @_;
      
-    my $attrs = $self -> meta -> get_attribute_map;
+    my @attrs = $self -> meta -> get_attribute_list;
 
-    # we return $attrs as an optimization
-    return $attrs;
+    # we return @attrs as an optimization
+    return @attrs;
     return;
 }   
 

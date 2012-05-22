@@ -1,7 +1,8 @@
 use Test::More tests => 6;
 
 package My::Machine;
-
+use Moose;
+extends 'Data::Pipeline::Machine';
 use Data::Pipeline::Machine;
 use Data::Pipeline qw( Array Count CSV );
 

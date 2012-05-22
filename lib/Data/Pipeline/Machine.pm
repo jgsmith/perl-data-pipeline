@@ -5,6 +5,8 @@ use Sub::Exporter;
 use Sub::Name 'subname';
 use Class::MOP ();
 use Carp ();
+
+use namespace::autoclean;
             
 #use Data::Pipeline::Aggregator::Machine;
 use Data::Pipeline::Machine::Surrogate;
@@ -124,7 +126,7 @@ sub import {
     });
 
 
-    Moose::init_meta($CALLER, 'Data::Pipeline::Machine');
+    Moose::init_meta($CALLER, for_class => 'Data::Pipeline::Machine');
 
     goto &$exporter;
 }

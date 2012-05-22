@@ -3,11 +3,11 @@ use inc::Module::Install;
 name 'Data-Pipeline';
 all_from 'lib/Data/Pipeline.pm';
 
-requires 'Moose' => 0.43;
+requires 'Moose' => 2.06;
 
 feature 'CSV Adapter' => (
     'Text::CSV' => 0,
-    'IO:Handle' => 0,
+    'IO::Handle' => 0,
     'IO::String' => 0,
     'IO::File' => 0
 );
